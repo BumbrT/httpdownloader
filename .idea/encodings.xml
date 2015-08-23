@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/src/day/kotlinapp/app.kt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/day/kotlinhelper/helperFunctions.kt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/day/kotlinlib/ArgsParser.kt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/day/kotlinlib/DownloadPortion.kt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/day/kotlinlib/DownloadThread.kt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/day/kotlinlib/TaskState.kt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/day/kotlinlib/constants.kt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/test/testdlportion.kt" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

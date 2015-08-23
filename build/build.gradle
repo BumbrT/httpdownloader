@@ -1,0 +1,55 @@
+version '1.0-SNAPSHOT'
+
+//apply plugin: 'java' // for libs
+apply plugin: "kotlin" // or apply plugin: "kotlin2js" if targeting JavaScript
+apply plugin: 'application' // for apps
+mainClassName = "day.kotlinapp.KotlinappPackage"
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:0.12.+'
+     //   classpath files('../lib/disruptor-3.3.2.jar')
+    }
+}
+
+
+test {
+    systemProperties 'property': 'value'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.jetbrains.kotlin:kotlin-stdlib:0.12.+'
+    compile 'com.lmax:disruptor:3.3.2'
+    runtime 'org.jetbrains.kotlin:kotlin-stdlib:0.12.+'
+    runtime 'com.lmax:disruptor:3.3.2'
+   // runtime files('../lib/disruptor-3.3.2.jar')
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
+sourceSets {
+        main.java.srcDirs +=  '../src/day/kotlinhelper'
+        main.java.srcDirs +=  '../src/day/kotlinlib'
+        main.java.srcDirs +=  '../src/day/kotlinapp'
+      //  main.java.srcDirs +=  'src/main/kotlin'
+   //     runtimeClasspath ='../lib/disruptor-3.3.2.jar'
+}
+//println sourceSets.main.java.srcDirs
+
+jar {
+    manifest {
+        attributes  'Main-Class': 'day.kotlinapp.KotlinappPackage'
+    }
+    // NEW LINE HERE !!!
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+}
+jar.archiveName = "httpdl.jar"
+
+
